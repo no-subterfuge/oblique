@@ -1,0 +1,6 @@
+-cp src
+-lib heaps
+-lib hldx
+-hl bin/oblique.hl
+-main Main
+-debug
