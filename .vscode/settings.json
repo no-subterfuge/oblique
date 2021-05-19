@@ -1,0 +1,9 @@
+{
+    "[haxe]": {
+        "editor.formatOnSave": true
+    },
+    "haxecheckstyle.sourceFolders": [
+        "src",
+        "Source",
+    ]
+}
