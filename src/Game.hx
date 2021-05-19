@@ -1,14 +1,19 @@
+import ent.Entity;
+
 class Game extends hxd.App
 {
-	public static var instance:Game;
+	public static var instance(default, null):Game;
+
+	public var entities:Array<Entity>;
 
 	override function init()
 	{
+		instance = this;
+		entities = [];
 		var test = new cosm.Celestial();
 		var tf = new h2d.Text(hxd.res.DefaultFont.get());
 		tf.text = "Hello Hashlink !";
-		test.addChild(tf);
-		instance = this;
+		entities.push(test);
 	}
 
 	static function main()
@@ -18,6 +23,9 @@ class Game extends hxd.App
 
 	override function update(dt:Float)
 	{
-		// s2d.
+		for (en in entities)
+		{
+			en.update(dt);
+		}
 	}
 }

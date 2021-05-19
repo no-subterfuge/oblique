@@ -9,7 +9,7 @@ class Celestial extends ent.Entity
 
 	public function new()
 	{
-		super();
+		super(10., 10., 100, 100);
 	}
 
 	override public function update(dt:Float) {}
