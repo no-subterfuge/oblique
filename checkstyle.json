@@ -339,8 +339,6 @@
 			"props": {
 				"tokens": [
 					"FOR",
-					"IF",
-					"ELSE_IF",
 					"WHILE",
 					"DO_WHILE"
 				],
