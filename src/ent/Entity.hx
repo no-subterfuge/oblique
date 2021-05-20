@@ -17,18 +17,18 @@ class Entity
 		this.width = width;
 		this.height = height;
 		#if debug
-		drawOutline();
+		drawBox(debugRect);
 		#end
 	}
 
 	public function update(dt:Float) {}
 
-	function drawOutline()
+	function drawBox(gphx:h2d.Graphics)
 	{
-		debugRect = new h2d.Graphics(Game.instance.s2d);
-		debugRect.beginFill(0, 0.);
-		debugRect.lineStyle(1., 0x2C5AFF);
-		debugRect.drawRect(x, y, cast(width, Float), cast(height, Float));
-		debugRect.endFill();
+		gphx = new h2d.Graphics(Game.INSTANCE.s2d);
+		gphx.beginFill(0, 0.);
+		gphx.lineStyle(1., 0x2C5AFF);
+		gphx.drawRect(x, y, cast(width, Float), cast(height, Float));
+		gphx.endFill();
 	}
 }
