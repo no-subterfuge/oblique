@@ -10,6 +10,7 @@ class Game extends hxd.App
 	{
 		if (INSTANCE == null)
 			INSTANCE = this;
+		s2d.scaleMode = LetterBox(320, 260, true, Left, Top);
 		entities = [];
 		var test = new cosm.Celestial();
 		var tf = new h2d.Text(hxd.res.DefaultFont.get());

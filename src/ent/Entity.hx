@@ -26,6 +26,8 @@ class Entity
 	function drawBox(gphx:h2d.Graphics)
 	{
 		gphx = new h2d.Graphics(Game.INSTANCE.s2d);
+		// gphx.scaleX = gphx.scaleY = 2;
+		gphx.rotation = 1.0;
 		gphx.beginFill(0, 0.);
 		gphx.lineStyle(1., 0x2C5AFF);
 		gphx.drawRect(x, y, cast(width, Float), cast(height, Float));
