@@ -3,4 +3,4 @@
 -lib hlsdl
 -hl bin/oblique.hl
 -main Game
--debug
+#-debug

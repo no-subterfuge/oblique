@@ -2,5 +2,8 @@
     "lineEnds": {
         "leftCurly": "both",
         "rightCurly": "both"
+    },
+    "whitespace": {
+        "typeHintColonPolicy": "around"
     }
 }

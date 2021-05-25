@@ -2,15 +2,15 @@ package ent;
 
 class Entity
 {
-	public var x:Float;
-	public var y:Float;
-	public var width:Int;
-	public var height:Int;
+	public var x : Float;
+	public var y : Float;
+	public var width : Int;
+	public var height : Int;
 	#if debug
-	public var debugRect:h2d.Graphics;
+	public var debugRect : h2d.Graphics;
 	#end
 
-	public function new(x:Float, y:Float, width = 0, height = 0)
+	public function new(x : Float, y : Float, width = 0, height = 0)
 	{
 		this.x = x;
 		this.y = y;
@@ -21,14 +21,12 @@ class Entity
 		#end
 	}
 
-	public function update(dt:Float) {}
+	public function update(dt : Float) {}
 
-	function drawBox(gphx:h2d.Graphics)
+	function drawBox(gphx : h2d.Graphics)
 	{
 		gphx = new h2d.Graphics(Game.INSTANCE.s2d);
-		// gphx.scaleX = gphx.scaleY = 2;
-		gphx.rotation = 1.0;
-		gphx.beginFill(0, 0.);
+		// gphx.beginFill(0x2C5AFF, 1);
 		gphx.lineStyle(1., 0x2C5AFF);
 		gphx.drawRect(x, y, cast(width, Float), cast(height, Float));
 		gphx.endFill();

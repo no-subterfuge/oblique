@@ -1,16 +1,16 @@
+import h2d.Scene.ScaleModeAlign;
 import ent.Entity;
 
 class Game extends hxd.App
 {
-	public static var INSTANCE(default, null):Game;
+	public static var INSTANCE(default, null) : Game;
 
-	public var entities:Array<Entity>;
+	public var entities : Array<Entity>;
 
 	override function init()
 	{
 		if (INSTANCE == null)
 			INSTANCE = this;
-		s2d.scaleMode = LetterBox(320, 260, true, Left, Top);
 		entities = [];
 		var test = new cosm.Celestial();
 		var tf = new h2d.Text(hxd.res.DefaultFont.get());
@@ -23,7 +23,7 @@ class Game extends hxd.App
 		new Game();
 	}
 
-	override function update(dt:Float)
+	override function update(dt : Float)
 	{
 		for (en in entities)
 		{
