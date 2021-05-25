@@ -1,0 +1,18 @@
+-cp src
+-lib heaps
+-main Game
+-debug
+
+--each
+
+-js bin/oblique.js
+
+--next
+
+-lib hldx
+-hl bin/oblique-dx.hl
+
+#--next
+
+#-lib hlsl
+#-hl bin/oblique-sl.hl

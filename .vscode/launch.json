@@ -10,6 +10,17 @@
                 "type": "haxe",
                 "args": "active configuration"
             }
+        },
+        {
+            "name": "Firefox js",
+            "type": "firefox",
+            "request": "launch",
+            "url": "file://${workspaceFolder}/index.html",
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": {
+                "type" : "haxe",
+                "args" : "active configuration"
+            }
         }
     ]
 }

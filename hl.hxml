@@ -1,6 +1,0 @@
--cp src
--lib heaps
--lib hlsdl
--hl bin/oblique.hl
--main Game
-#-debug
