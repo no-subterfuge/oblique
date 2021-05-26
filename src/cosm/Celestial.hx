@@ -1,7 +1,6 @@
 package cosm;
 
-import h3d.Vector;
-import hxd.fmt.grd.Data.Color;
+import Pixelize.PixelizeShader;
 import h2d.Graphics;
 import h2d.col.Point;
 
@@ -15,10 +14,15 @@ class Celestial extends ent.Entity
 
 	public function new()
 	{
-		super(10., 10., 12, 12);
+		super(10., 10., 120, 120);
 		spr = new Graphics(Game.INSTANCE.s2d);
-		spr.beginFill(COLOR.red);
+		spr.beginFill(COLOR.blue);
 		spr.drawCircle(x + width / 2, y + height / 2, width / 2);
+		var shader = new PixelizeShader();
+		shader.red = 0.5;
+		var filter = new h2d.filter.Shader(shader);
+		shader.texture = spr.tile.getTexture();
+		spr.filter = filter;
 	}
 
 	override public function update(dt : Float) {}
