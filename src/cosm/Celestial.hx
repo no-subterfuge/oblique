@@ -7,6 +7,7 @@ import h2d.col.Point;
 class Celestial extends ent.Entity
 {
 	public static final COLOR = {red: 0xFF0000, blue: 0x0000FF};
+	public static final G_CONST = 6.674e-11; // Gravitational constant
 
 	public var mass : Float;
 	public var velocity : Point;
@@ -17,7 +18,7 @@ class Celestial extends ent.Entity
 		super(10., 10., 120, 120);
 		spr = new Graphics(Game.INSTANCE.s2d);
 		spr.beginFill(COLOR.blue);
-		spr.drawCircle(x + width / 2, y + height / 2, width / 2);
+		spr.drawCircle(pos.x + width / 2, pos.y + height / 2, width / 2);
 		var shader = new PixelizeShader();
 		shader.red = 0.5;
 		var filter = new h2d.filter.Shader(shader);
@@ -26,4 +27,11 @@ class Celestial extends ent.Entity
 	}
 
 	override public function update(dt : Float) {}
+
+	public inline function gForce(other : Celestial) : h2d.col.Point
+	{
+		var distV = new h2d.col.Point(pos.x - other.pos.x, pos.y - other.pos.y);
+		var magnitude = G_CONST * mass * other.mass / Math.pow(distV.length(), 2);
+		return distV.normalized().multiply(-magnitude);
+	}
 }

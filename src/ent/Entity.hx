@@ -2,8 +2,7 @@ package ent;
 
 class Entity
 {
-	public var x : Float;
-	public var y : Float;
+	public var pos : h2d.col.Point;
 	public var width : Int;
 	public var height : Int;
 	#if debug
@@ -12,8 +11,7 @@ class Entity
 
 	public function new(x : Float, y : Float, width = 0, height = 0)
 	{
-		this.x = x;
-		this.y = y;
+		pos = new h2d.col.Point(x, y);
 		this.width = width;
 		this.height = height;
 		#if debug
@@ -28,7 +26,7 @@ class Entity
 		gphx = new h2d.Graphics(Game.INSTANCE.s2d);
 		// gphx.beginFill(0x2C5AFF, 1);
 		gphx.lineStyle(1., 0x2C5AFF);
-		gphx.drawRect(x, y, cast(width, Float), cast(height, Float));
+		gphx.drawRect(pos.x, pos.y, cast(width, Float), cast(height, Float));
 		gphx.endFill();
 	}
 }
