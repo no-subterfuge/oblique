@@ -188,16 +188,6 @@
 			}
 		},
 		{
-			"type": "Indentation",
-			"props": {
-				"character": "tab",
-				"ignoreConditionals": false,
-				"conditionalPolicy": "aligned",
-				"ignoreComments": true,
-				"wrapPolicy": "larger"
-			}
-		},
-		{
 			"type": "IndentationCharacter",
 			"props": {
 				"character": "tab",
@@ -575,12 +565,6 @@
 		{
 			"type": "TrailingWhitespace",
 			"props": {}
-		},
-		{
-			"type": "Type",
-			"props": {
-				"ignoreEnumAbstractValues": true
-			}
 		},
 		{
 			"type": "TypeDocComment",
