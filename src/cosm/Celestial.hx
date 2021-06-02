@@ -7,9 +7,12 @@ import h2d.col.Point;
 class Celestial extends ent.Entity
 {
 	public static final COLOR = {red: 0xFF0000, blue: 0x0000FF};
-	public static final G_CONST = 6.674e-11; // Gravitational constant
+
+	/** Gravitational constant **/
+	public static final G_CONST = 6.674e-11;
 
 	public var mass : Float;
+
 	public var velocity : Point;
 	public var spr : Graphics;
 
@@ -28,10 +31,13 @@ class Celestial extends ent.Entity
 
 	override public function update(dt : Float) {}
 
-	public inline function gForce(other : Celestial) : h2d.col.Point
+	/**
+		Calculates the gravitationnal force applied by another celestial object.
+	**/
+	public function gForce(other : Celestial) : h2d.col.Point
 	{
 		var distV = new h2d.col.Point(pos.x - other.pos.x, pos.y - other.pos.y);
-		var magnitude = G_CONST * mass * other.mass / Math.pow(distV.length(), 2);
+		var magnitude : Float = G_CONST * mass * other.mass / Math.pow(distV.length(), 2);
 		return distV.normalized().multiply(-magnitude);
 	}
 }
