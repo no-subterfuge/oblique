@@ -1,21 +1,23 @@
-import h2d.Scene.ScaleModeAlign;
-import ent.Entity;
+import cosm.System;
+import h2d.col.Point;
 
 class Game extends hxd.App
 {
 	public static var INSTANCE(default, null) : Game;
 
-	public var entities : Array<Entity>;
+	public var systems : List<System>;
 
 	override function init()
 	{
 		if (INSTANCE == null)
 			INSTANCE = this;
-		entities = [];
-		var test = new cosm.Celestial();
-		var tf = new h2d.Text(hxd.res.DefaultFont.get());
-		tf.text = "Hello Hashlink !";
-		entities.push(test);
+		systems = new List<System>();
+		var sol = new System();
+		var earth = new cosm.Celestial(10., 10, new Point(0., 12.), 1.0);
+		sol.add(earth);
+		var sun = new cosm.Celestial(30., 30., new Point(0, 0), 40000.0);
+		sol.add(sun);
+		systems.add(sol);
 	}
 
 	static function main()
@@ -25,9 +27,9 @@ class Game extends hxd.App
 
 	override function update(dt : Float)
 	{
-		for (en in entities)
+		for (sys in systems)
 		{
-			en.update(dt);
+			sys.update(dt);
 		}
 	}
 }
