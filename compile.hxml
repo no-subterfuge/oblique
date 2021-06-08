@@ -12,7 +12,7 @@
 -lib hldx
 -hl bin/oblique-dx.hl
 
-#--next
+--next
 
-#-lib hlsl
-#-hl bin/oblique-sl.hl
+-lib hlsdl
+-hl bin/oblique-sdl.hl
