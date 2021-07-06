@@ -1,6 +1,5 @@
 package cosm;
 
-import Pixelize.PixelizeShader;
 import h2d.Graphics;
 import h2d.col.Point;
 
@@ -17,12 +16,18 @@ class Celestial extends ent.Entity
 
 	public var spr : Graphics;
 
+	var line : Graphics;
+
+	var pointArray : Array<Point>;
+
 	public function new(x : Float, y : Float, momentum : Point, mass : Float)
 	{
 		super(x, y, 16, 16);
 		this.momentum = momentum;
 		this.mass = mass;
 		spr = new Graphics(Game.INSTANCE.s2d);
+		line = new Graphics(Game.INSTANCE.s2d);
+		line.beginFill(COLOR.blue);
 
 		/*var shader = new PixelizeShader();
 			shader.red = 0.5;
@@ -36,6 +41,7 @@ class Celestial extends ent.Entity
 		velocity.x = momentum.x / mass;
 		velocity.y = momentum.y / mass;
 		super.update(dt);
+		addPoint();
 		draw();
 	}
 
@@ -55,5 +61,11 @@ class Celestial extends ent.Entity
 		spr.beginFill(COLOR.blue);
 		spr.drawCircle(pos.x + width / 2, pos.y + height / 2, width / 2);
 		spr.endFill();
+	}
+
+	function addPoint()
+	{
+		line.drawRect(cx, cy, 1., 1.);
+		line.beginFill(COLOR.blue);
 	}
 }
