@@ -7,6 +7,9 @@ class Entity
 	public var pos : h2d.col.Point;
 	public var width : Int;
 	public var height : Int;
+	public var cx(get, set) : Float;
+	public var cy(get, set) : Float;
+
 	public var velocity : Point;
 	#if debug
 	public var debugRect : h2d.Graphics;
@@ -31,6 +34,24 @@ class Entity
 		#if debug
 		drawBox(debugRect);
 		#end
+	}
+
+	inline function get_cx()
+		return pos.x + width / 2.;
+
+	inline function get_cy()
+		return pos.y + height / 2.;
+
+	function set_cx(value : Float)
+	{
+		pos.x = value - width / 2.;
+		return cx;
+	}
+
+	function set_cy(value : Float)
+	{
+		pos.y = value - width / 2.;
+		return cy;
 	}
 
 	#if debug
