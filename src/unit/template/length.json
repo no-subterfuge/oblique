@@ -1,0 +1,11 @@
+{
+    "baseClass": "Length",
+    "type": "Float",
+    "units": [
+        { "name": "Meter",      "symbol": "m",   "conversionValue": 1 },
+        { "name": "Kilometer",  "symbol": "km",  "conversionValue": 1000 },
+        { "name": "AstronomicalUnit", "symbol": "au", "conversionValue": 149597870700 },
+        { "name": "LightYear",  "symbol": "ly",  "conversionValue": 9460730472580800 },
+        { "name": "Parsec",     "symbol": "pc",  "conversionValue": 30856775814914220 }
+    ]
+}
