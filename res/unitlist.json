@@ -1,0 +1,12 @@
+{
+    "unitTypeList": ["Mass", "Distance", "Time", "Speed"],
+    "unitList": [
+        {
+            "name": "Kilogram",
+            "symbol": "kg",
+            "unitType": "Mass",
+            "baseValueMultiplier": 1.0
+        },
+        {}
+    ]
+}
